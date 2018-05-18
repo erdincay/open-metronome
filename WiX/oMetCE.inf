@@ -1,0 +1,141 @@
+[Version]
+Signature   = $Windows NT$        ; required as-is
+Provider    = codeBiscuit       ; maximum of 30 characters, full app name will be Provider AppName
+CESignature = $Windows CE$        ; required as-is
+ 
+[CEStrings]
+AppName     = Open Metronome        ; maximum of 40 characters, full app name will be Provider AppName
+InstallDir  = %CE1%\%AppName%       ; Program Files\Mine Sweeper
+ 
+[SourceDisksNames]                  ; directory that holds the application's files
+1 = , Common Files,,Dist
+2 = , Common Files,,Dist\Samples
+3 = , Common Files,,Dist\Samples\Usr
+ 
+[SourceDisksFiles]                  ; list of files to be included in .cab
+oMet_WCE.exe = 1
+Acoustic Bass Drum.wav = 2
+Acoustic Snare.WAV = 2
+Bass Drum 1.WAV = 2
+Claves.WAV = 2
+Closed Hi-hat.WAV = 2
+Cowbell.WAV = 2
+Crash Cymbal 1.WAV = 2
+Crash Cymbal 2.WAV = 2
+Electric Snare.WAV = 2
+hand clap.wav = 2
+Hi Mid Tom.WAV = 2
+High Floor Tom.WAV = 2
+High Tom.WAV = 2
+Low Conga.WAV = 2
+Low Floor Tom.WAV = 2
+Low Tom.WAV = 2
+Low-Mid tom.WAV = 2
+Maracas.WAV = 2
+Open Hi-hat.WAV = 2
+Pedal Hi-hat.WAV = 2
+Ride Cymbal 1.WAV = 2
+Ride Cymbal 2.WAV = 2
+Side Stick.WAV = 2
+ZZZ_Readme.Samples.txt = 2
+ZZ_Default.wav = 2
+Cabasa.WAV = 2
+Chinese Cymbal.WAV = 2
+Hi Bongo.WAV = 2
+Hi Wood Block.WAV = 2
+High Agogo.WAV = 2
+High Timbale.WAV = 2
+Long Guiro.WAV = 2
+Long Whistle.WAV = 2
+Low Agogo.WAV = 2
+Low Bongo.WAV = 2
+Low Timbale.WAV = 2
+Low Wood Block.WAV = 2
+Mute Cuica.WAV = 2
+Mute Hi Conga.WAV = 2
+Mute Triangle.WAV = 2
+Open Cuica.WAV = 2
+Open Hi Conga.WAV = 2
+Open Triangle.WAV = 2
+Ride Bell.WAV = 2
+Short Guiro.WAV = 2
+Short Whistle.WAV = 2
+Splash Cymbal.WAV = 2
+Tambourine.WAV = 2
+Vibraslap.WAV = 2
+1SecondHissLoop.wav = 3
+ 
+[DefaultInstall]                    ; operations to be completed during install
+CopyFiles   = CopyToProgramFiles,CopyToPFSamples,CopyToPFSamplesUsr
+AddReg      = RegData
+CEShortcuts = Shortcuts   
+ 
+[DestinationDirs]                   ; default destination directories for each operation section
+CopyToProgramFiles    = 0, %InstallDir%
+CopyToPFSamples       = 0, %InstallDir%\Samples
+CopyToPFSamplesUsr    = 0, %InstallDir%\Samples\Usr
+Shortcuts   = 0, %CE11%             ; WindowsStart MenuProgramsGames
+ 
+[CopyToProgramFiles]                ; copy operation file list
+oMet_WCE.exe, oMet_WCE.exe
+
+[CopyToPFSamples]                ; copy operation file list
+Acoustic Bass Drum.wav, Acoustic Bass Drum.wav
+Acoustic Snare.WAV, Acoustic Snare.WAV
+Bass Drum 1.WAV, Bass Drum 1.WAV
+Claves.WAV, Claves.WAV
+Closed Hi-hat.WAV, Closed Hi-hat.WAV
+Cowbell.WAV, Cowbell.WAV
+Crash Cymbal 1.WAV, Crash Cymbal 1.WAV
+Crash Cymbal 2.WAV, Crash Cymbal 2.WAV
+Electric Snare.WAV, Electric Snare.WAV
+hand clap.wav, hand clap.wav
+Hi Mid Tom.WAV, Hi Mid Tom.WAV
+High Floor Tom.WAV, High Floor Tom.WAV
+High Tom.WAV, High Tom.WAV
+Low Conga.WAV, Low Conga.WAV
+Low Floor Tom.WAV, Low Floor Tom.WAV
+Low Tom.WAV, Low Tom.WAV
+Low-Mid tom.WAV, Low-Mid tom.WAV
+Maracas.WAV, Maracas.WAV
+Open Hi-hat.WAV, Open Hi-hat.WAV
+Pedal Hi-hat.WAV, Pedal Hi-hat.WAV
+Ride Cymbal 1.WAV, Ride Cymbal 1.WAV
+Ride Cymbal 2.WAV, Ride Cymbal 2.WAV
+Side Stick.WAV, Side Stick.WAV
+ZZZ_Readme.Samples.txt, ZZZ_Readme.Samples.txt
+ZZ_Default.wav, ZZ_Default.wav
+Cabasa.WAV, Cabasa.WAV         
+Chinese Cymbal.WAV, Chinese Cymbal.WAV
+Hi Bongo.WAV, Hi Bongo.WAV      
+Hi Wood Block.WAV, Hi Wood Block.WAV 
+High Agogo.WAV, High Agogo.WAV    
+High Timbale.WAV, High Timbale.WAV  
+Long Guiro.WAV, Long Guiro.WAV    
+Long Whistle.WAV, Long Whistle.WAV  
+Low Agogo.WAV, Low Agogo.WAV     
+Low Bongo.WAV, Low Bongo.WAV     
+Low Timbale.WAV, Low Timbale.WAV   
+Low Wood Block.WAV, Low Wood Block.WAV
+Mute Cuica.WAV, Mute Cuica.WAV    
+Mute Hi Conga.WAV, Mute Hi Conga.WAV 
+Mute Triangle.WAV, Mute Triangle.WAV 
+Open Cuica.WAV, Open Cuica.WAV    
+Open Hi Conga.WAV, Open Hi Conga.WAV 
+Open Triangle.WAV, Open Triangle.WAV 
+Ride Bell.WAV, Ride Bell.WAV     
+Short Guiro.WAV, Short Guiro.WAV   
+Short Whistle.WAV, Short Whistle.WAV 
+Splash Cymbal.WAV, Splash Cymbal.WAV 
+Tambourine.WAV, Tambourine.WAV    
+Vibraslap.WAV, Vibraslap.WAV     
+
+[CopyToPFSamplesUsr]                ; copy operation file list
+1SecondHissLoop.wav, 1SecondHissLoop.wav 
+
+[RegData]                           ; registry key list
+HKCU,Software\%AppName%,MajorVersion,0x00010001,1
+HKCU,Software\%AppName%,MinorVersion,0x00010001,0
+ 
+[Shortcuts]                         ; Shortcut created in destination dir, %CE11%
+%AppName%,0,oMet_WCE.exe

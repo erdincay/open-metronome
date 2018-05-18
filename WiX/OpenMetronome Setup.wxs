@@ -1,0 +1,117 @@
+<?xml version='1.0'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2003/01/wi'>
+   <Product Id='4B200398-CA2D-4f67-8D00-C618F04020A7' Name='Open Metronome' Language='1033'
+            Version='1.0.0.0' Manufacturer='code::Biscuit'>
+      <Package Id='1B3CCF49-87A4-4e5d-9500-CDACC0A8B5D1'
+                Description='Open Metronome Installer'
+                Comments='Open-Source Metronome Application for Windows 9x, ME, NT, 2k, XP and Beyond!'
+                InstallerVersion='200' Compressed='yes' />
+ 
+      <Media Id='1' Cabinet='product.cab' EmbedCab='yes' />
+
+<Icon Id="oMetronome.ico" SourceFile="oMetronome.ico" />
+
+<Property Id="ARPPRODUCTICON" Value="oMetronome.ico" />
+<Property Id="ARPHELPLINK" Value="http://openmetronome.sourceforge.net/" />
+   <UIRef Id="WixUI_Minimal" />
+      <Directory Id='TARGETDIR' Name='SourceDir'>
+         <Directory Id='ProgramFilesFolder' Name='PFiles'>
+            <Directory Id='AppDir' Name='oMetronm' LongName='Open Metronome'>
+               <Component Id='oMetronome' Guid='24128183-770B-436a-A763-A3FAA91CEC13'>
+                  <File Id='Open_Metronome_Executable' Name='oMetroWV.exe' LongName='oMetronome_WAV.exe' DiskId='1' src='Dist\oMetronome_WAV.exe'>
+                      <Shortcut Advertise="yes"
+                        Id="codeBisuitAppShortcut"
+                        Directory="ProgramMenuFolder"
+                        Name="oMetroWV" LongName="Open Metronome (WAV)"
+                        WorkingDirectory="INSTALLDIR"
+                        Description="Open Metonome (WAV)"
+                        Icon="oMetronome_WAV.exe">
+                      <Icon Id="oMetronome_WAV.exe"
+                        SourceFile="Dist\oMetronome_WAV.exe" />
+                      </Shortcut>
+                      <Shortcut Advertise="yes" Id="DesktopShortcut" 
+                        Directory="DesktopFolder" Name="oMetroWV" LongName="Open Metronome (WAV)" Icon="oMetronome_WAV.exe"/>
+                   </File>
+            	<File Id='GPL_Lic_' Name='COPYING.txt'  LongName='COPYING.txt' DiskId='1' src='Dist\COPYING.txt' />
+               </Component>
+      <Directory Id="ProgramMenuFolder" Name="PMFolder">
+      </Directory>
+      <Directory Id="DesktopFolder" Name="Desktop">
+      </Directory>
+               <Directory Id='SampleDir' Name='Samples'>
+                   <Component Id='Samples' Guid='5F6F398A-BADB-4cb0-9CA6-207D037F5DF7'>
+                        <File Id='AcouBass' Name='AcouBass.wav' LongName='Acoustic Bass Drum.wav' DiskId='1' src='Dist\Samples\Acoustic Bass Drum.wav' />
+                        <File Id='AcouSnar' Name='AcouSnar.WAV' LongName='Acoustic Snare.WAV' DiskId='1' src='Dist\Samples\Acoustic Snare.WAV' />
+                        <File Id='BassDrum' Name='BassDrum.WAV' LongName='Bass Drum 1.WAV' DiskId='1' src='Dist\Samples\Bass Drum 1.WAV' />
+                        <File Id='Claves__' Name='Claves__.WAV' LongName='Claves.WAV' DiskId='1' src='Dist\Samples\Claves.WAV' />
+                        <File Id='Closed_H' Name='Closed_H.WAV' LongName='Closed Hi-hat.WAV' DiskId='1' src='Dist\Samples\Closed Hi-hat.WAV' />
+                        <File Id='Cowbell_' Name='Cowbell_.WAV' LongName='Cowbell.WAV' DiskId='1' src='Dist\Samples\Cowbell.WAV' />
+                        <File Id='CrashCy1' Name='CrashCy1.WAV' LongName='Crash Cymbal 1.WAV' DiskId='1' src='Dist\Samples\Crash Cymbal 1.WAV' />
+                        <File Id='CrashCy2' Name='CrashCy2.WAV' LongName='Crash Cymbal 2.WAV' DiskId='1' src='Dist\Samples\Crash Cymbal 2.WAV' />
+                        <File Id='ElecSnar' Name='ElecSnar.WAV' LongName='Electric Snare.WAV' DiskId='1' src='Dist\Samples\Electric Snare.WAV' />
+                        <File Id='handclap' Name='handclap.wav' LongName='hand clap.wav' DiskId='1' src='Dist\Samples\hand clap.wav' />
+                        <File Id='HiMidTom' Name='HiMidTom.WAV' LongName='Hi Mid Tom.WAV' DiskId='1' src='Dist\Samples\Hi Mid Tom.WAV' />
+                        <File Id='HiFloorT' Name='HiFloorT.WAV' LongName='High Floor Tom.WAV' DiskId='1' src='Dist\Samples\High Floor Tom.WAV' />
+                        <File Id='High_Tom' Name='High_Tom.WAV' LongName='High Tom.WAV' DiskId='1' src='Dist\Samples\High Tom.WAV' />
+                        <File Id='LowConga' Name='LowConga.WAV' LongName='Low Conga.WAV' DiskId='1' src='Dist\Samples\Low Conga.WAV' />
+                        <File Id='LowFlorT' Name='LowFlorT.WAV' LongName='Low Floor Tom.WAV' DiskId='1' src='Dist\Samples\Low Floor Tom.WAV' />
+                        <File Id='LowTom__' Name='LowTom__.WAV' LongName='Low Tom.WAV' DiskId='1' src='Dist\Samples\Low Tom.WAV' />
+                        <File Id='LowMidtM' Name='LowMidtM.WAV' LongName='Low-Mid tom.WAV' DiskId='1' src='Dist\Samples\Low-Mid tom.WAV' />
+                        <File Id='Maracas_' Name='Maracas_.WAV' LongName='Maracas.WAV' DiskId='1' src='Dist\Samples\Maracas.WAV' />
+                        <File Id='OpenHHat' Name='OpenHHat.WAV' LongName='Open Hi-hat.WAV' DiskId='1' src='Dist\Samples\Open Hi-hat.WAV' />
+                        <File Id='PedalHhT' Name='PedalHhT.WAV' LongName='Pedal Hi-hat.WAV' DiskId='1' src='Dist\Samples\Pedal Hi-hat.WAV' />
+                        <File Id='RideCym1' Name='RideCym1.WAV' LongName='Ride Cymbal 1.WAV' DiskId='1' src='Dist\Samples\Ride Cymbal 1.WAV' />
+                        <File Id='RideCym2' Name='RideCym2.WAV' LongName='Ride Cymbal 2.WAV' DiskId='1' src='Dist\Samples\Ride Cymbal 2.WAV' />
+                        <File Id='SideStik' Name='SideStik.WAV' LongName='Side Stick.WAV' DiskId='1' src='Dist\Samples\Side Stick.WAV' />
+                        <File Id='Cabasa__' Name='Cabasa__.WAV' LongName='Cabasa.WAV' DiskId='1' src='Dist\Samples\Cabasa.WAV' />
+                        <File Id='Chinese_' Name='Chinese_.WAV' LongName='Chinese Cymbal.WAV' DiskId='1' src='Dist\Samples\Chinese Cymbal.WAV' />
+                        <File Id='Hi_Bongo' Name='Hi_Bongo.WAV' LongName='Hi Bongo.WAV' DiskId='1' src='Dist\Samples\Hi Bongo.WAV' />
+                        <File Id='Hi_Wood_' Name='Hi_Wood_.WAV' LongName='Hi Wood Block.WAV' DiskId='1' src='Dist\Samples\Hi Wood Block.WAV' />
+                        <File Id='High_Ago' Name='High_Ago.WAV' LongName='High Agogo.WAV' DiskId='1' src='Dist\Samples\High Agogo.WAV' />
+                        <File Id='High_Tim' Name='High_Tim.WAV' LongName='High Timbale.WAV' DiskId='1' src='Dist\Samples\High Timbale.WAV' />
+                        <File Id='Long_Gui' Name='Long_Gui.WAV' LongName='Long Guiro.WAV' DiskId='1' src='Dist\Samples\Long Guiro.WAV' />
+                        <File Id='Long_Whi' Name='Long_Whi.WAV' LongName='Long Whistle.WAV' DiskId='1' src='Dist\Samples\Long Whistle.WAV' />
+                        <File Id='Low_Agog' Name='Low_Agog.WAV' LongName='Low Agogo.WAV' DiskId='1' src='Dist\Samples\Low Agogo.WAV' />
+                        <File Id='Low_Bong' Name='Low_Bong.WAV' LongName='Low Bongo.WAV' DiskId='1' src='Dist\Samples\Low Bongo.WAV' />
+                        <File Id='Low_Timb' Name='Low_Timb.WAV' LongName='Low Timbale.WAV' DiskId='1' src='Dist\Samples\Low Timbale.WAV' />
+                        <File Id='Low_Wood' Name='Low_Wood.WAV' LongName='Low Wood Block.WAV' DiskId='1' src='Dist\Samples\Low Wood Block.WAV' />
+                        <File Id='Mute_Cui' Name='Mute_Cui.WAV' LongName='Mute Cuica.WAV' DiskId='1' src='Dist\Samples\Mute Cuica.WAV' />
+                        <File Id='Mute_Hi_' Name='Mute_Hi_.WAV' LongName='Mute Hi Conga.WAV' DiskId='1' src='Dist\Samples\Mute Hi Conga.WAV' />
+                        <File Id='Mute_Tri' Name='Mute_Tri.WAV' LongName='Mute Triangle.WAV' DiskId='1' src='Dist\Samples\Mute Triangle.WAV' />
+                        <File Id='Open_Cui' Name='Open_Cui.WAV' LongName='Open Cuica.WAV' DiskId='1' src='Dist\Samples\Open Cuica.WAV' />
+                        <File Id='Open_Hi_' Name='Open_Hi_.WAV' LongName='Open Hi Conga.WAV' DiskId='1' src='Dist\Samples\Open Hi Conga.WAV' />
+                        <File Id='Open_Tri' Name='Open_Tri.WAV' LongName='Open Triangle.WAV' DiskId='1' src='Dist\Samples\Open Triangle.WAV' />
+                        <File Id='Ride_Bel' Name='Ride_Bel.WAV' LongName='Ride Bell.WAV' DiskId='1' src='Dist\Samples\Ride Bell.WAV' />
+                        <File Id='Short_Gu' Name='Short_Gu.WAV' LongName='Short Guiro.WAV' DiskId='1' src='Dist\Samples\Short Guiro.WAV' />
+                        <File Id='Short_Wh' Name='Short_Wh.WAV' LongName='Short Whistle.WAV' DiskId='1' src='Dist\Samples\Short Whistle.WAV' />
+                        <File Id='Splash_C' Name='Splash_C.WAV' LongName='Splash Cymbal.WAV' DiskId='1' src='Dist\Samples\Splash Cymbal.WAV' />
+                        <File Id='Tambouri' Name='Tambouri.WAV' LongName='Tambourine.WAV' DiskId='1' src='Dist\Samples\Tambourine.WAV' />
+                        <File Id='Vibrasla' Name='Vibrasla.WAV' LongName='Vibraslap.WAV' DiskId='1' src='Dist\Samples\Vibraslap.WAV' />
+                        <File Id='ZZZ_Read' Name='ZZZ_Read.txt' LongName='ZZZ_Readme.Samples.txt' DiskId='1' src='Dist\Samples\ZZZ_Readme.Samples.txt' />
+                        <File Id='ZDefault' Name='ZDefault.wav' LongName='ZZ_Default.wav' DiskId='1' src='Dist\Samples\ZZ_Default.wav' />
+                   </Component>
+               </Directory>
+               <Directory Id='SampleDix' Name='Samples'>
+                   <Directory Id='SampleUsr' Name='Usr'>
+                       <Component Id='SampUsr' Guid='7544506d-ca81-4bb4-aaab-6634b4f037a8'>
+                            <File Id='Hiss1Sec' Name='1SecHiss.wav' LongName='1SecondHissLoop.wav' DiskId='1' src='Dist\Samples\Usr\1SecondHissLoop.wav' />
+                       </Component>
+                   </Directory>
+               </Directory>
+            </Directory>
+         </Directory>
+      </Directory>
+ 
+      <Feature Id='Core' Title='Metronome Core' Level='1'>
+         <ComponentRef Id='oMetronome' />
+      </Feature>
+      <Feature Id='Samples' Title='Metronome Sample Voice Files (WAVs)' Level='1'>
+         <ComponentRef Id='Samples' />
+      </Feature>
+      <Feature Id='SampUsr' Title='Metronome Example User Sample Voice Files (WAVs)' Level='1'>
+         <ComponentRef Id='SampUsr' />
+      </Feature>
+   </Product>
+</Wix>
+
+ 
